@@ -32,8 +32,8 @@ def login(client, user_data: dict):
     access_token = create_access_token(
         data={"user": user_dict}, expires_delta=access_token_expires
     )
-    
-    return {"access_token": access_token, "token_type": "bearer"}
+    user_id = str(db_user["_id"])
+    return {"user_id": user_id, "access_token": access_token, "token_type": "bearer"}
 
 def create_access_token(data: dict, expires_delta: timedelta):
     to_encode = data.copy()

@@ -1,9 +1,8 @@
 
 # use bcrypt to hash the password
 import bcrypt
-from pymongo import MongoClient
 from modals.users import Role
-def signup(client: MongoClient, user_dict: dict):
+def signup(client, user_dict: dict):
     try:
         user_dict["password"] = bcrypt.hashpw(user_dict["password"].encode("utf-8"), bcrypt.gensalt()).decode('utf-8')
         if isinstance(user_dict["role"], Role):
