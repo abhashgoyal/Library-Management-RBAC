@@ -46,7 +46,7 @@ const UserLogin: React.FC = () => {
             value={formData.username}
             onChange={handleChange}
             placeholder="Enter your username"
-            style={styles.input}
+            style={{ ...styles.input, ...styles.inputPlaceholder }}
             required
           />
         </div>
@@ -61,7 +61,7 @@ const UserLogin: React.FC = () => {
             value={formData.password}
             onChange={handleChange}
             placeholder="Enter your password"
-            style={styles.input}
+            style={{ ...styles.input, ...styles.inputPlaceholder }}
             required
           />
         </div>
@@ -90,57 +90,70 @@ const styles: { [key: string]: React.CSSProperties } = {
     alignItems: 'center',
     justifyContent: 'center',
     height: '100vh',
-    backgroundColor: '#f9f9f9',
-    fontFamily: 'Arial, sans-serif',
+    backgroundColor: '#f7f7f7',
+    fontFamily: '"Segoe UI", Tahoma, Geneva, Verdana, sans-serif',
+    padding: '0 20px',
   },
   form: {
     backgroundColor: '#ffffff',
     padding: '2rem',
-    borderRadius: '10px',
-    boxShadow: '0px 4px 6px rgba(0, 0, 0, 0.1)',
+    borderRadius: '12px',
+    boxShadow: '0px 6px 12px rgba(0, 0, 0, 0.1)',
     width: '100%',
-    maxWidth: '400px',
+    maxWidth: '380px',
+    transition: 'transform 0.3s ease-in-out',
   },
   title: {
     fontSize: '1.8rem',
-    marginBottom: '1.5rem',
+    fontWeight: '700',
     textAlign: 'center',
     color: '#333',
+    marginBottom: '1.5rem',
+    letterSpacing: '1px',
   },
   inputGroup: {
-    marginBottom: '1.2rem',
+    marginBottom: '1.5rem',
   },
   label: {
     display: 'block',
-    marginBottom: '0.5rem',
     fontSize: '1rem',
     color: '#555',
+    marginBottom: '0.5rem',
   },
   input: {
     width: '100%',
-    padding: '0.8rem',
+    padding: '1rem',
     fontSize: '1rem',
-    borderRadius: '5px',
-    border: '1px solid #ccc',
+    color: '#333',  // Dark color for input text
+    borderRadius: '8px',
+    border: '1px solid #d1d1d1',
     backgroundColor: '#f9f9f9',
     boxSizing: 'border-box',
+    transition: 'border-color 0.3s ease',
+  },
+  inputPlaceholder: {
+    color: '#999',  // Light grey for placeholder text
   },
   button: {
     width: '100%',
-    padding: '0.8rem',
+    padding: '1rem',
     fontSize: '1.1rem',
     color: '#fff',
     backgroundColor: '#007BFF',
     border: 'none',
-    borderRadius: '5px',
+    borderRadius: '8px',
     cursor: 'pointer',
-    transition: 'background-color 0.3s ease',
+    transition: 'background-color 0.3s ease, transform 0.2s ease',
+  },
+  buttonHover: {
+    backgroundColor: '#0056b3',
+    transform: 'scale(1.05)',
   },
   registerText: {
-    marginTop: '1rem',
+    marginTop: '1.2rem',
     textAlign: 'center',
-    color: '#555',
-    fontSize: '0.9rem',
+    color: '#777',
+    fontSize: '0.95rem',
   },
   registerLink: {
     color: '#007BFF',

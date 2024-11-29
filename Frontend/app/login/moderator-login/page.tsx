@@ -112,6 +112,7 @@ const styles: { [key: string]: React.CSSProperties } = {
     borderRadius: '5px',
     border: '1px solid #ccc',
     backgroundColor: '#f9f9f9',
+    color: '#333',  // Ensure the text color is visible
     boxSizing: 'border-box',
   },
   button: {
@@ -137,5 +138,6 @@ const styles: { [key: string]: React.CSSProperties } = {
     textDecoration: 'underline',
   },
 };
+
 
 export default ModeratorLogin;

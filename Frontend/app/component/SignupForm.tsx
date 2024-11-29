@@ -117,7 +117,7 @@ const styles: { [key: string]: React.CSSProperties } = {
     fontSize: '1.8rem',
     marginBottom: '1.5rem',
     textAlign: 'center',
-    color: '#333',
+    color: '#333', 
   },
   inputGroup: {
     marginBottom: '1.2rem',
@@ -126,7 +126,7 @@ const styles: { [key: string]: React.CSSProperties } = {
     display: 'block',
     marginBottom: '0.5rem',
     fontSize: '1rem',
-    color: '#555',
+    color: '#333',
   },
   input: {
     width: '100%',
@@ -134,7 +134,8 @@ const styles: { [key: string]: React.CSSProperties } = {
     fontSize: '1rem',
     borderRadius: '5px',
     border: '1px solid #ccc',
-    backgroundColor: '#f9f9f9',
+    backgroundColor: '#fff',
+    color: '#333', 
     boxSizing: 'border-box',
   },
   button: {

@@ -177,7 +177,7 @@ const ModeratorDashboard: React.FC = () => {
 
   return (
     <div className="moderator-dashboard">
-      <h1>Moderator Dashboard</h1>
+      <h1>  Moderator Dashboard</h1>
       
       <div className="tab-navigation">
         <button 

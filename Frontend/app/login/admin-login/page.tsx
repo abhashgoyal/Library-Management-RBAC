@@ -1,4 +1,4 @@
-"use client"
+'use client'
 import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import axios from 'axios';
@@ -68,6 +68,9 @@ const AdminLogin: React.FC = () => {
         <button type="submit" style={styles.button}>
           Login
         </button>
+        <p style={styles.registerText}>
+          Don't have an account? <span style={styles.registerLink}>Register</span>
+        </p>
       </form>
     </div>
   );
@@ -79,14 +82,15 @@ const styles: { [key: string]: React.CSSProperties } = {
     alignItems: 'center',
     justifyContent: 'center',
     height: '100vh',
-    backgroundColor: '#f9f9f9',
+    backgroundColor: '#f0f2f5',
     fontFamily: 'Arial, sans-serif',
+    padding: '20px',
   },
   form: {
     backgroundColor: '#ffffff',
     padding: '2rem',
-    borderRadius: '10px',
-    boxShadow: '0px 4px 6px rgba(0, 0, 0, 0.1)',
+    borderRadius: '8px',
+    boxShadow: '0px 6px 12px rgba(0, 0, 0, 0.1)',
     width: '100%',
     maxWidth: '400px',
   },
@@ -95,9 +99,11 @@ const styles: { [key: string]: React.CSSProperties } = {
     marginBottom: '1.5rem',
     textAlign: 'center',
     color: '#333',
+    fontWeight: '600',
+    letterSpacing: '1px',
   },
   inputGroup: {
-    marginBottom: '1.2rem',
+    marginBottom: '1.5rem',
   },
   label: {
     display: 'block',
@@ -107,16 +113,17 @@ const styles: { [key: string]: React.CSSProperties } = {
   },
   input: {
     width: '100%',
-    padding: '0.8rem',
+    padding: '0.9rem',
     fontSize: '1rem',
+    color: '#333', // Text color for input fields
     borderRadius: '5px',
     border: '1px solid #ccc',
-    backgroundColor: '#f9f9f9',
-    boxSizing: 'border-box',
+    backgroundColor: '#f7f7f7',
+    transition: 'border-color 0.3s ease',
   },
   button: {
     width: '100%',
-    padding: '0.8rem',
+    padding: '1rem',
     fontSize: '1.1rem',
     color: '#fff',
     backgroundColor: '#007BFF',
@@ -125,10 +132,13 @@ const styles: { [key: string]: React.CSSProperties } = {
     cursor: 'pointer',
     transition: 'background-color 0.3s ease',
   },
+  buttonHover: {
+    backgroundColor: '#0056b3',
+  },
   registerText: {
     marginTop: '1rem',
     textAlign: 'center',
-    color: '#555',
+    color: '#777',
     fontSize: '0.9rem',
   },
   registerLink: {

@@ -1,52 +1,468 @@
+
+  /* Moderator Dashboard Container */
 .moderator-dashboard {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-  }
-  
-  .moderator-table {
-    width: 100%;
-    border-collapse: collapse;
-  }
-  
-  .moderator-table th, 
-  .moderator-table td {
-    border: 1px solid #ddd;
-    padding: 8px;
-    text-align: left;
-  }
-  
-  .rent-btn {
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    padding: 5px 10px;
-    cursor: pointer;
-  }
-  
-  .rent-book-form {
-    margin-top: 20px;
-    padding: 20px;
-    border: 1px solid #ddd;
-  }
-  
-  .rent-book-form input {
-    width: 100%;
-    padding: 8px;
-    margin: 10px 0;
-  }
-  
-  .form-actions {
-    display: flex;
-    justify-content: space-between;
-  }
-  
-  .submit-btn {
-    background-color: #4CAF50;
-    color: white;
-  }
-  
-  .cancel-btn {
-    background-color: #f44336;
-    color: white;
-  }
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px;
+  background-color: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.moderator-dashboard:hover {
+  transform: translateY(-5px);
+}
+
+/* Header Styling for Moderator Dashboard */
+.moderator-dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  border-bottom: 3px solid #f0f0f0;
+  padding-bottom: 15px;
+}
+
+.moderator-dashboard-header h1 {
+  font-size: 32px;
+  font-weight: 700;
+  color: #2d3748;
+  letter-spacing: 1px;
+}
+
+.moderator-dashboard-header .btn-action {
+  padding: 12px 25px;
+  background-color: #38a169;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.moderator-dashboard-header .btn-action:hover {
+  background-color: #2f855a;
+  transform: scale(1.05);
+}
+
+.moderator-dashboard-header .btn-action:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(72, 187, 120, 0.5);
+}
+
+/* Table Styling for Book Rentals */
+.moderator-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 40px;
+  background-color: #f9fafb;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.moderator-table th,
+.moderator-table td {
+  border: 1px solid #e2e8f0;
+  padding: 12px 18px;
+  text-align: left;
+  font-size: 16px;
+  color: #2d3748;
+}
+
+.moderator-table th {
+  background-color: #edf2f7;
+  color: #4a5568;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.moderator-table tr:nth-child(even) {
+  background-color: #f9fafb;
+}
+
+.moderator-table tr:hover {
+  background-color: #e2e8f0;
+  transition: background-color 0.3s ease;
+}
+
+.moderator-table tr.active {
+  background-color: #c6f6d5;
+  font-weight: 700;
+  color: #2f855a;
+}
+
+/* Rent Button Styling */
+.rent-btn {
+  background-color: #38a169;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  cursor: pointer;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.rent-btn:hover {
+  background-color: #2f855a;
+  transform: scale(1.05);
+}
+
+.rent-btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(72, 187, 120, 0.5);
+}
+
+/* Book Rentals Section */
+.book-rentals-section {
+  margin-top: 50px;
+  padding: 30px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e2e8f0;
+}
+
+.book-rentals-section h2 {
+  font-size: 28px;
+  color: #2d3748;
+  font-weight: 700;
+  margin-bottom: 20px;
+  border-bottom: 3px solid #edf2f7;
+  padding-bottom: 10px;
+}
+
+.book-rentals-section .rent-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.book-rentals-section .rent-table th,
+.book-rentals-section .rent-table td {
+  border: 1px solid #e2e8f0;
+  padding: 12px 18px;
+  text-align: left;
+  font-size: 16px;
+  color: #2d3748;
+}
+
+.book-rentals-section .rent-table th {
+  background-color: #edf2f7;
+  color: #4a5568;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.book-rentals-section .rent-table tr:nth-child(even) {
+  background-color: #f9fafb;
+}
+
+.book-rentals-section .rent-table tr:hover {
+  background-color: #e2e8f0;
+  transition: background-color 0.3s ease;
+}
+
+.book-rentals-section .rent-table tr.active {
+  background-color: #c6f6d5;
+  font-weight: 700;
+  color: #2f855a;
+}
+
+/* Rent Form Styling */
+.rent-book-form {
+  margin-top: 40px;
+  padding: 30px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e2e8f0;
+}
+
+.rent-book-form h2 {
+  font-size: 22px;
+  color: #2d3748;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.rent-book-form label {
+  font-size: 16px;
+  font-weight: 600;
+  color: #4a5568;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.rent-book-form input {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: 1px solid #cbd5e0;
+  border-radius: 8px;
+  font-size: 16px;
+  color: #2d3748;
+}
+
+.rent-book-form input:focus {
+  border-color: #38a169;
+  outline: none;
+}
+
+/* Form Action Buttons */
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+
+.submit-btn,
+.cancel-btn {
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.submit-btn {
+  background-color: #38a169;
+  color: white;
+}
+
+.submit-btn:hover {
+  background-color: #2f855a;
+  transform: scale(1.05);
+}
+
+.cancel-btn {
+  background-color: #f44336;
+  color: white;
+  margin-left: 10px;
+}
+
+.cancel-btn:hover {
+  background-color: #e53e3e;
+  transform: scale(1.05);
+}
+
+/* Loading Spinner */
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.loading img {
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* General Styles for the Dashboard */
+.moderator-dashboard {
+  font-family: 'Arial', sans-serif;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 30px;
+  background-color: #f9fafb; 
+  border-radius: 10px; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  
+}
+
+/* Title Section */
+.moderator-dashboard h1 {
+  font-size: 40px;
+  font-weight: 700;
+  color: #2c3e50;  
+  text-transform: uppercase; 
+  letter-spacing: 2px;  
+  text-align: center;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+
+.moderator-dashboard h1::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 50%;
+  height: 3px;
+  background-color: #38a169;  
+  border-radius: 2px;
+}
+
+/* Tab Navigation */
+.tab-navigation {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.tab-navigation button {
+  background-color: #fff;
+  color: #2c3e50;
+  padding: 10px 20px;
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  margin: 0 10px;
+  transition: all 0.3s ease;
+}
+
+.tab-navigation button:hover {
+  background-color: #38a169;
+  color: white;
+  border-color: #38a169;
+}
+
+.tab-navigation .active {
+  background-color: #38a169;
+  color: white;
+  border-color: #38a169;
+}
+
+/* Table Styles for Books */
+.moderator-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 30px;
+}
+
+.moderator-table th, .moderator-table td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.moderator-table th {
+  background-color: #38a169;
+  color: white;
+  font-weight: 600;
+}
+
+.moderator-table td {
+  background-color: #fff;
+  font-size: 16px;
+}
+
+/* Button for Renting Books */
+.rent-btn {
+  background-color: #38a169;
+  color: white;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+.rent-btn:hover {
+  background-color: #2e7d46;
+}
+
+/* Form for Renting Books */
+.rent-book-form {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-top: 30px;
+}
+
+.rent-book-form h2 {
+  font-size: 28px;
+  color: #2c3e50;
+  margin-bottom: 20px;
+}
+
+.rent-book-form input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.rent-book-form input:focus {
+  border-color: #38a169;
+  outline: none;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: space-between;
+}
+
+.submit-btn, .cancel-btn {
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.submit-btn {
+  background-color: #38a169;
+  color: white;
+  border: none;
+}
+
+.cancel-btn {
+  background-color: #f44336;
+  color: white;
+  border: none;
+}
+
+.submit-btn:hover {
+  background-color: #2e7d46;
+}
+
+.cancel-btn:hover {
+  background-color: #c62828;
+}
+
+/* Loading Spinner */
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+}
+
+.loading-spinner {
+  border: 8px solid #f3f3f3;
+  border-top: 8px solid #38a169;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Tab Content */
+.tab-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
