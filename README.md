@@ -80,3 +80,4 @@ Technologies used in the project:
 <h2>VRV Security’s Backend Developer Intern Assignment</h2>
 
 Devloped with love by Abhash Goyal<p>https://www.linkedin.com/in/abhashgoyal-4692b91b8/</p>
+<p>abhashgoyal200@gmail.com</p>
