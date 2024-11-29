@@ -68,9 +68,9 @@ const AdminLogin: React.FC = () => {
         <button type="submit" style={styles.button}>
           Login
         </button>
-        <p style={styles.registerText}>
+        {/* <p style={styles.registerText}>
           Don't have an account? <span style={styles.registerLink}>Register</span>
-        </p>
+        </p> */}
       </form>
     </div>
   );
