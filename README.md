@@ -120,7 +120,7 @@ Technologies used in the project:
 - Next.js for an intuitive and easy-to-use frontend framework.
 - MongoDB for offering a scalable NoSQL database solution.
 
-<h2>Thank You VRV Security For Provoding me this oppourtunity</h2> 
+<h2>Thank You VRV Security For Providing me this oppourtunity</h2> 
 <h2>VRV Security’s Backend Developer Intern Assignment</h2>
 
 Devloped with love by Abhash Goyal<p>https://www.linkedin.com/in/abhashgoyal-4692b91b8/</p>
