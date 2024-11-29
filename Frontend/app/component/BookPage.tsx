@@ -9,6 +9,7 @@ const BooksPage: React.FC = () => {
   const [purchasedBooks, setPurchasedBooks] = useState<any[]>([]);
   const [viewPurchased, setViewPurchased] = useState<boolean>(false); // State to control displaying purchased books
   const [purchased, setPurchased] = useState<any>([]);
+
   useEffect(() => {
     fetchBooks();
   }, []);
@@ -26,7 +27,7 @@ const BooksPage: React.FC = () => {
           Authorization: `Bearer ${token}`,
         },
       });
-      console.log("response",response.data.response);
+      console.log("response", response.data.response);
       setBooks(response.data.response);
       setLoading(false);
     } catch (error) {
@@ -49,24 +50,24 @@ const BooksPage: React.FC = () => {
         headers: {
           Authorization: `Bearer ${token}`,
           'Content-Type': 'application/json',
-          'Accept': 'application/json'
+          'Accept': 'application/json',
         },
       });
 
       console.log("Purchased Books:", response.data.books);
-      var books_data = []
+      let books_data = [];
       for (let i = 0; i < response.data.books.length; i++) {
-        const bookId = response.data.books[i]
+        const bookId = response.data.books[i];
         const book_data = await axios.get(`http://localhost:8000/get-books/${bookId}`, {
           headers: {
             'Content-Type': 'application/json',
-            'Accept': 'application/json'
+            'Accept': 'application/json',
           },
         });
-        books_data.push(book_data.data.book)
+        books_data.push(book_data.data.book);
       }
       setPurchased(books_data);
-      console.log("purchased",purchased)
+      console.log("purchased", purchased);
       setViewPurchased(true); // Show the purchased books list
     } catch (error) {
       console.error('Error fetching purchased books:', error);
@@ -91,7 +92,7 @@ const BooksPage: React.FC = () => {
       buy_date: buyDate,
     };
 
-    console.log("data",data);
+    console.log("data", data);
 
     try {
       const response = await axios.post('http://localhost:8000/user/buy-book', data, {
@@ -100,7 +101,7 @@ const BooksPage: React.FC = () => {
         },
       });
 
-      console.log("response",response.data);
+      console.log("response", response.data);
 
       // Update the purchasedBooks state after successful purchase
       setPurchasedBooks((prevPurchasedBooks) => [...prevPurchasedBooks, bookId]);
@@ -110,6 +111,10 @@ const BooksPage: React.FC = () => {
       console.error('Error buying book:', error);
       alert('Error buying book');
     }
+  };
+
+  const handleBack = () => {
+    setViewPurchased(false); // Hide the purchased books view and show the books list
   };
 
   if (loading) {
@@ -145,6 +150,9 @@ const BooksPage: React.FC = () => {
               ))}
             </div>
           )}
+          <button onClick={handleBack} className="back-button">
+            Back to Available Books
+          </button>
         </div>
       ) : (
         <>
@@ -160,7 +168,7 @@ const BooksPage: React.FC = () => {
                     <h3>{book.title}</h3>
                     <p className="book-author">{book.author}</p>
                     <p className="book-description">{book.description}</p>
-                    <button 
+                    <button
                       onClick={() => handleBuyBook(book.book_id)}
                       disabled={purchasedBooks.includes(book.book_id)}
                       className={`buy-button ${purchasedBooks.includes(book.book_id) ? 'purchased' : ''}`}
@@ -175,9 +183,11 @@ const BooksPage: React.FC = () => {
         </>
       )}
 
-      <button onClick={fetchPurchasedBooks} className='text-black'>
-        View Purchased Books
-      </button>
+      {!viewPurchased && (
+        <button onClick={fetchPurchasedBooks} className='text-black'>
+          View Purchased Books
+        </button>
+      )}
     </div>
   );
 };
