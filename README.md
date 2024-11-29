@@ -79,24 +79,48 @@ Technologies used in the project:
 
 <h2>🎦 Travelling to the Project:</h2>
 
-#### 1. **Landing Page Screenshot**
+#### 1. **Landing Page **
    ![Landing Page](Project-Images/Landing-Page.png)
 
-#### 2. **Login Page**
+#### 2. **Role Selections**
+   ![Login Page](Project-Images/SignIn-Page.png)   
+
+#### 3. **USER Login Page**
    ![Login Page](Project-Images/user-login.png)
 
-#### 3. **Dashboard**
+#### 4. **ADMIN Login Page**
+   ![Login Page](Project-Images/admin-login.png)
+
+#### 5. **MODERATOR Login Page**
+   ![Login Page](Project-Images/moderator-login.png)
+
+#### 6. **User Dashboard**
    ![Dashboard](Project-Images/user-dashboard.png)
+   
+#### 6. **User Dashboard 2**
+   ![Dashboard](Project-Images/book-details.png)
 
-#### 4. **Book Management**
+#### 7. **Admin Management**
    ![Book Management](Project-Images/admin-dashboard-book.png)
-
-#### 5. **User Management**
+   
+#### 8. **Admin Management 2**
    ![User Management](Project-Images/admin-dashboard.png)
+   
+#### 9. **Moderator Management**
+   ![Book Management](Project-Images/moderator-dashboard.png)
 
+### 🚧 Future Roadmap
+- Implement user notification system.
+- Add book reservation functionality.
+- Enhance user analytics for admins.
+- Integrate search functionality with advanced filters.
 
+### 🙏 Acknowledgments
+- FastAPI for providing a high-performance backend framework.
+- Next.js for an intuitive and easy-to-use frontend framework.
+- MongoDB for offering a scalable NoSQL database solution.
 
-  
+<h2>Thank You VRV Security For Provoding me this oppourtunity</h2> 
 <h2>VRV Security’s Backend Developer Intern Assignment</h2>
 
 Devloped with love by Abhash Goyal<p>https://www.linkedin.com/in/abhashgoyal-4692b91b8/</p>
